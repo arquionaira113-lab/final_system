@@ -4,6 +4,10 @@ use App\Http\Controllers\Warehouse\ItemController;
 use App\Http\Controllers\Warehouse\RequestController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect('/warehouse');
+});
+
 Route::prefix('warehouse')->name('warehouse.')->group(function () {
 
     Route::get('/', fn() => redirect()->route('warehouse.items.index'));
